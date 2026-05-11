@@ -1,24 +1,17 @@
 package com.ecommerce.user.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
 
 @Data
-@NoArgsConstructor
-@Entity(name = "addresses")
 public class Address {
-    @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    private Long id;
 
     private String street;
 
@@ -30,9 +23,9 @@ public class Address {
 
     private String zipcode;
 
-    @CreationTimestamp
+    @CreatedDate
     private LocalDateTime createdAt;
 
-    @UpdateTimestamp
+    @LastModifiedDate
     private LocalDateTime updatedAt;
 }
